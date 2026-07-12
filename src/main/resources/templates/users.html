@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <title>Użytkownicy</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Główna</a>
+        <a href="/books">Książki</a>
+        <a href="/members">Członkowie</a>
+        <a href="/reservations">Rezerwacje</a>
+        <a href="/users">Użytkownicy</a>
+    </nav>
+    <div class="container">
+        <h1>Użytkownicy</h1>
+        <ul>
+            <p>Lista używkowników</p>
+            <li th:each="user : ${users}" th:text="${user.name}">Nazwa użytkownika</li>
+        </ul>
+    </div>
+</body>
+</html>
