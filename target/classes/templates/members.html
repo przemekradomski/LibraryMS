@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Główna</a>
+        <a href="/books">Książki</a>
+        <a href="/members">Członkowie</a>
+        <a href="/reservations">Rezerwacje</a>
+        <a href="/users">Użytkownicy</a>
+    </nav>
+    <div class="container">
+        <h1>Członkowie</h1>
+        <ul>
+            <li th:each="member : ${members}" th:text="${member.name}">Imię członka</li>
+        </ul>
+    </div>
+    <script src="/js/script.js"></script>
+    <script src="/js/cookies.js"></script>
+</body>
+</html>
