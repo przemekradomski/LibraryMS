@@ -23,13 +23,13 @@ public class Member {
     private String phoneNumber;
 
     @Column(name = "status", nullable = false, length = 20)
-    private String status;
+    private String status = "AKTYWNY";
 
     @Column(name = "maks_wypozyczen", nullable = false)
-    private Integer maxLoans;
+    private Integer maxLoans = 5;
 
     @Column(name = "data_dolaczenia", nullable = false)
-    private LocalDateTime registrationDate;
+    private java.time.LocalDateTime registrationDate = java.time.LocalDateTime.now();
 
     public Member() {}
 

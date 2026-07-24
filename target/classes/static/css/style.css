@@ -214,6 +214,25 @@ nav a:first-child { color: var(--text); }
     text-align: center;
 }
 
+.member-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.member-list li {
+    padding: 14px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border: var(--radius);
+    font-size: 14px;
+    border-left: 3px solid var(--accent);
+    transition: border-color .15s;
+}
+
+.member-list li:hover {border-color: var(--accent2)}
 
 /* ── Wyszukiwarka ─────────────────────────────────────────── */
 .search-bar {

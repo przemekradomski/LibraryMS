@@ -6,4 +6,5 @@ import pl.example.libraryManagment.entity.Member;
 
 @Repository
 public interface MemberRepository extends JpaRepository<Member, Long> {
+    boolean existsByEmail(String email);
 }

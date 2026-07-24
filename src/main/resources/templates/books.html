@@ -75,11 +75,11 @@
     <h1>Książki</h1>
     <ul class="book-list">
     <li th:each="book : ${books}">
-    <span th:text="${book.title}">Tytuł książki</span>
-    <form th:action="@{/books/{id}/delete(id=${book.id})}" method="post" style="display:inline">
+        <span th:text="${book.title}">Tytuł książki</span>
+        <form th:action="@{/books/{id}/delete(id=${book.id})}" method="post" style="display:inline">
         <button type="submit" class="btn-danger btn-small">Usuń</button>
-    </form>
-</li>
+        </form>
+    </li>
 </ul>
     <p th:if="${#lists.isEmpty(books)}" class="empty-state">Brak książek w bibliotece.</p>
 </div>

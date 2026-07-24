@@ -26,11 +26,11 @@ public class ViewController {
         return "index";
     }
 
-    @GetMapping("/members")
-    public String members(Model model) {
-        model.addAttribute("members", List.of());
-        return "members";
-    }
+//    @GetMapping("/members")
+//    public String members(Model model) {
+//        model.addAttribute("members", List.of());
+//        return "members";
+//    }
 
     @GetMapping("/reservations")
     public String reservations(Model model) {
