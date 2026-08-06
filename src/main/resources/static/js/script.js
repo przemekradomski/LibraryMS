@@ -56,6 +56,26 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 });
 
+//dodaje rezerwacje
+document.addEventListener("DOMContentLoaded", function(){
+    var addButton = document.getElementById("addReservation");
+    var closeButton = document.getElementById("closeForm");
+    var form = document.getElementById("addReservationForm");
+    var cancelButton = document.getElementById("cancelReservationForm");
+
+    if(addButton){ addButton.addEventListener("click", function(){ form.classList.remove("hidden"); }); }
+    if(closeButton){ closeButton.addEventListener("click", function(){ form.classList.add("hidden"); }); }
+    if(cancelButton){ cancelButton.addEventListener("click", function(){ form.classList.add("hidden"); }); }
+
+    if(form){
+        form.addEventListener("submit", function(event){
+            if(!confirm("Czy na pewno chcesz dodać rezerwację?")){
+                event.preventDefault();
+            }
+        });
+    }
+});
+
 function searchBooks(){
     var searchInput = document.querySelector(".search");
     if(searchInput){

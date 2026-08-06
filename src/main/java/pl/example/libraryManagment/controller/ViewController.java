@@ -32,12 +32,6 @@ public class ViewController {
 //        return "members";
 //    }
 
-    @GetMapping("/reservations")
-    public String reservations(Model model) {
-        model.addAttribute("reservations", List.of());
-        return "reservations";
-    }
-
     @GetMapping("/users")
     public String users()
     {return "users";}

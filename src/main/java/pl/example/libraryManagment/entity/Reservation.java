@@ -35,6 +35,7 @@ public class Reservation {
     public Book getBook() { return book; }
     public void setBook(Book book) { this.book = book; }
     public Member getMember() { return member; }
+    public void setMember(Member member) {this.member = member;}
     public LocalDateTime getReservationDate() { return reservationDate; }
     public void setReservationDate(LocalDateTime reservationDate) { this.reservationDate = reservationDate; }
     public LocalDateTime getExpiresAt() { return expiresAt; }

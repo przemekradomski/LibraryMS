@@ -234,6 +234,27 @@ nav a:first-child { color: var(--text); }
 
 .member-list li:hover {border-color: var(--accent2)}
 
+.reservation-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.reservation-list li{
+    padding: 14px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border : var(--radius);
+    font-size: 14px;
+    border-left: 3px solid var(--accent);
+    transition: border-color .15s;
+
+}
+
+.reservation-list li:hover { border-color: var(--accent)}
+
 /* ── Wyszukiwarka ─────────────────────────────────────────── */
 .search-bar {
     padding: 28px 32px 0;
