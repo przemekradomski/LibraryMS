@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pl.example.libraryManagment.service.BookService;
 import pl.example.libraryManagment.service.MemberService;
 import pl.example.libraryManagment.service.ReservationService;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -64,6 +65,12 @@ public class ReservationController {
             model.addAttribute("books", bookService.getAllBooks());
             return "reservations";
         }
+    }
+
+    @PostMapping("/{id}/delete")
+    public String deleteReservation(@PathVariable Long id){
+        reservationService.deleteReservation(id);
+        return "redirect:/reservations";
     }
 
 }

@@ -58,7 +58,7 @@
 
 <div class="container">
     <h1>Rezerwacje</h1>
-    <ul class="reservation-list">
+    <ul class="book-list">
         <li th:each="reservation : ${reservations}">
             <br>
             <span th:text="${reservation.status}">Status</span>
@@ -70,6 +70,9 @@
             <span th:text="${reservation.member.lastName}">Nazwisko członka</span>
             <br>
             <span th:text="${reservation.book.title}">Tytuł książki</span>
+                <form th:action="@{/reservations/{id}/delete(id=${reservation.id})}" method="post">
+                <button type="submit" class="btn-danger btn-small">Usuń</button>
+            </form>
         </li>
     </ul>
     <p th:if="${#lists.isEmpty(reservations)}">Brak rezerwacji.</p>

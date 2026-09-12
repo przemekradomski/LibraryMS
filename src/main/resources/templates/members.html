@@ -50,7 +50,7 @@
     </div>
 <div class="container">
     <h1>Członkowie</h1>
-    <ul class="member-list">
+    <ul class="book-list">
         <li th:each="member : ${members}">
             <span th:text="${member.firstName}">Imie członka</span>
             <br>
@@ -58,7 +58,7 @@
             <br>
             <span th:text="${member.email}">Adres e-mail członka</span>
             <form th:action="@{/members/{id}/delete(id=${member.id})}" method="post">
-                
+                <button type="submit" class="btn-danger btn-small">Usuń</button>
             </form>
         </li>
     </ul>

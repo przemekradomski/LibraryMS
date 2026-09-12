@@ -6,4 +6,6 @@ import pl.example.libraryManagment.entity.Reservation;
 
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
+    void deleteMemberById(Long memberID);
+    void deleteReservationById(Long reservationID);
 }

@@ -1,5 +1,6 @@
 package pl.example.libraryManagment.service;
 
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import pl.example.libraryManagment.entity.Book;
 import pl.example.libraryManagment.entity.Member;
@@ -42,5 +43,10 @@ public class ReservationService {
         reservation.setReservationDate(java.time.LocalDateTime.now());
 
         reservationRepository.save(reservation);
+    }
+
+    @Transactional
+    public void deleteReservation(Long id){
+        reservationRepository.deleteReservationById(id);
     }
 }

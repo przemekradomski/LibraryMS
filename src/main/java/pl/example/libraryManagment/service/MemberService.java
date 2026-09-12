@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.example.libraryManagment.controller.MemberController;
 import pl.example.libraryManagment.entity.Member;
 import pl.example.libraryManagment.repository.MemberRepository;
+import pl.example.libraryManagment.repository.ReservationRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,10 +14,12 @@ import java.util.Optional;
 public class MemberService {
 
     private final MemberRepository memberRepository;
+    private final ReservationRepository reservationRepository;
 
     @Autowired
-    public MemberService(MemberRepository memberRepository){
+    public MemberService(MemberRepository memberRepository, ReservationRepository reservationRepository){
         this.memberRepository = memberRepository;
+        this.reservationRepository = reservationRepository;
     }
 
     public List<Member> getAllMembers(){return memberRepository.findAll();}
@@ -27,6 +30,9 @@ public class MemberService {
         }
         return memberRepository.save(member);
     }
-    public void deleteMember(Long id){memberRepository.deleteById(id);}
+    public void deleteMember(Long id){
+        memberRepository.deleteById(id);
+        reservationRepository.deleteMemberById(id);
+    }
 
 }
