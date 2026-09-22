@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nie znaleziono strony</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-$END$
+    <nav>
+    <a href="/">Główna</a>
+    <a href="/books">Książki</a>
+    <a href="/members">Członkowie</a>
+    <a href="/reservations">Rezerwacje</a>
+    <a href="/users">Użytkownicy</a>
+</nav>
+<div class="container">
+    <div class="error-card">
+        <h1 th:text="${statusCode}">404</h1>
+        <p th:text="${statusCode == 404} ? 'Strona nie została znaleziona' : 'Wystąpił błąd serwera'">Błąd</p>
+        <a href="/" class="btn-primary">Powrót do strony głównej</a>
+    </div>
+</div>
 </body>
 </html>
