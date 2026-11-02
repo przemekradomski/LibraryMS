@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LibraryMS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --bs-body-bg: #0b1220;
+        --bs-body-color: #e5e7eb;
+        --bs-secondary-bg: #111827;
+        --bs-tertiary-bg: #172235;
+        --bs-border-color: rgba(148, 163, 184, 0.2);
+        --bs-card-bg: #111827;
+        --bs-card-border-color: rgba(148, 163, 184, 0.18);
+      }
+
+      html, body {
+        background: #0b1220;
+        color: #e5e7eb;
+      }
+
+      body {
+        background: radial-gradient(circle at top, #111827 0%, #0b1220 42%, #060b14 100%);
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+      }
+
+      .card {
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.45);
+        border: 1px solid var(--bs-border-color);
+        background: rgba(17, 24, 39, 0.95);
+      }
+
+      .table td, .table th {
+        vertical-align: middle;
+      }
+
+      .table, .table th, .table td {
+        color: #e5e7eb;
+      }
+
+      .table-hover tbody tr:hover {
+        background-color: rgba(148, 163, 184, 0.08);
+      }
+
+      .form-control, .form-select, .input-group-text, .list-group-item {
+        background-color: #0f172a;
+        border-color: var(--bs-border-color);
+        color: #e5e7eb;
+      }
+
+      .form-control::placeholder {
+        color: #94a3b8;
+      }
+
+      .list-group-item {
+        background-color: rgba(15, 23, 42, 0.9);
+      }
+
+      .text-muted {
+        color: #94a3b8 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/react-app.js"></script>
+  </body>
+</html>

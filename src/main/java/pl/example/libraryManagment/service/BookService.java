@@ -45,11 +45,16 @@ public class BookService {
         String searchLower = search.toLowerCase();
         return bookRepository.findAll()
                 .stream()
-                .filter(book -> book.getTitle().toLowerCase().contains(searchLower)
-                        || book.getAuthors().stream()
-                        .anyMatch(author ->
-                                author.getFirstName().toLowerCase().contains(searchLower)
-                                        || author.getLastName().toLowerCase().contains(searchLower)))
+                .filter(book -> {
+                    String title = book.getTitle() == null ? "" : book.getTitle().toLowerCase();
+                    boolean matchesTitle = title.contains(searchLower);
+                    boolean matchesAuthors = book.getAuthors() != null && book.getAuthors().stream().anyMatch(author -> {
+                        String firstName = author.getFirstName() == null ? "" : author.getFirstName().toLowerCase();
+                        String lastName = author.getLastName() == null ? "" : author.getLastName().toLowerCase();
+                        return firstName.contains(searchLower) || lastName.contains(searchLower);
+                    });
+                    return matchesTitle || matchesAuthors;
+                })
                 .collect(Collectors.toList());
     }
 

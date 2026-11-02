@@ -22,13 +22,8 @@ public class ViewController {
     }
 
     @GetMapping("/")
-    public String index(Model model) {
-        model.addAttribute("numberOfBooks", bookService.getAllBooks().size());
-        model.addAttribute("numberOfActiveMembers", memberService.getAllMembers().size());
-        model.addAttribute("numberOfReservation", reservationService.getAllReservations().size());
-        model.addAttribute("lastAddedBooks", bookService.GetLastAddedBooks());
-        model.addAttribute("lastReservations", List.of());
-        return "index";
+    public String index() {
+        return "forward:/index.html";
     }
 
 //    @GetMapping("/members")
